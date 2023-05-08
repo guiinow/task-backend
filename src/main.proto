@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package task;
+
+service TasksService {
+  rpc FindOne (TaskById) returns (Task) {}
+}
+
+message TaskById { //requisição?
+  string id = 1;
+}
+
+message Task { //resposta?
+  string id = 1;
+  string name = 2;
+  bool active = 3;
+} 
